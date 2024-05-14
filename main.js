@@ -3,12 +3,17 @@ const menuIcon = document.querySelector('.menuIcon'),
       overlay = document.querySelector('.overLay');
 
 
-menuIcon.addEventListener('click', sidebarMenuToggle);
-sidebarXicon.addEventListener('click', sidebarMenuToggle);
-overlay.addEventListener('click', sidebarMenuToggle);
+menuIcon.addEventListener('click', activeSidebarMenu);
+sidebarXicon.addEventListener('click', hideSidebarMenu);
+overlay.addEventListener('click', hideSidebarMenu);
 
 
-function sidebarMenuToggle(){
- document.querySelector(".sideMenu").classList.toggle("sideMenuActive");
- document.querySelector('.overLay').classList.toggle("overLayActive");
+function activeSidebarMenu(){
+ document.querySelector(".sideMenu").classList.add("sideMenuActive");
+ document.querySelector('.overLay').classList.add("overLayActive");
+}
+
+function hideSidebarMenu(){
+    document.querySelector(".sideMenu").classList.remove("sideMenuActive");
+    document.querySelector(".overLay").classList.remove("overLayActive");
 }
